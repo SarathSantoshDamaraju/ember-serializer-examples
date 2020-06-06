@@ -1,0 +1,33 @@
+<h1> REST serializer</h1>
+<ul>
+  <li>The data rendered in this page is constructed using the REST serializer.</li>
+  <li>refer to <pre>app/ serializers/ user</pre> to see the implementation</li>
+</ul>
+
+<h2>Payload format</h2>
+
+{{!-- template-lint-disable  no-inline-styles --}}
+<code style="white-space: break-spaces;">
+  {
+    ...
+    rests: [
+    {
+      id: '',
+      name: ''
+    }
+    ...
+    ];
+    ...
+  }
+</code>
+
+<h2>Data rendered</h2>
+<section>
+  {{#each model as |user|}}
+    <div class="details">
+      <div class="detail type">
+        <p>{{user.email}}</p>
+      </div>
+    </div>
+  {{/each}}
+</section>

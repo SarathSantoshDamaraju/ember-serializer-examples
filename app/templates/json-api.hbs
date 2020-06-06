@@ -1,0 +1,40 @@
+<h1> JSON API serializer</h1>
+<ul>
+  <li>The data rendered in this page is constructed using the JSONAPI serializer.</li>
+  <li>please check the <a href="https://guides.emberjs.com/v3.12.0/models/customizing-serializers/#toc_jsonapi-document" target="blank">link</a> to know the payload structure</li>
+  <li>refer to <pre>app/ serializers/ json-api</pre> to see the implementation</li>
+</ul>
+
+<h2>Payload format</h2>
+
+{{!-- template-lint-disable  no-inline-styles --}}
+<code style="white-space: break-spaces;">
+  {
+  "data": [{
+    "type": "people",
+    "id": "123",
+    "attributes": {
+      "first-name": "Jeff",
+      "last-name": "Atwood"
+    }
+  }, {
+    "type": "people",
+    "id": "124",
+    "attributes": {
+      "first-name": "Yehuda",
+      "last-name": "Katz"
+    }
+  }]
+}
+</code>
+
+<h2>Data rendered</h2>
+<section>
+  {{#each model as |user|}}
+    <div class="details">
+      <div class="detail type">
+        <p>{{user.name}}</p>
+      </div>
+    </div>
+  {{/each}}
+</section>

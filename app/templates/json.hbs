@@ -1,0 +1,31 @@
+<h1> JSON serializer</h1>
+<ul>
+  <li>The data rendered in this page is constructed using the JSON serializer.</li>
+  <li>please check the <a href="https://api.emberjs.com/ember-data/release/classes/JSONSerializer" target="blank">link</a> to know the payload structure</li>
+  <li>refer to <pre>app/ serializers/ json</pre> to see the implementation</li>
+</ul>
+
+<h2>Payload format</h2>
+
+{{!-- template-lint-disable  no-inline-styles --}}
+<code style="white-space: break-spaces;">
+  {
+    id: 1,
+    name: 'Sebastian',
+    friends: [3, 4],
+    links: {
+      house: '/houses/lefkada'
+      }
+  }
+</code>
+
+<h2>Data rendered</h2>
+<section>
+  {{#each model as |rest|}}
+    <div class="details">
+      <div class="detail type">
+        <p>{{rest.name}}</p>
+      </div>
+    </div>
+  {{/each}}
+</section>
